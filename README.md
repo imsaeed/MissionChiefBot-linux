@@ -4,7 +4,7 @@ This repo is specifically for use with Servers Linux / Docker with generally sma
 
 Want to know how to run a bot for 24 hours a day? Sure, I can show you.
 
-1. First of all I'd recommened setting up a Digital Ocean account, or any other cloud provider. You can set an account for Digital Ocean [here](https://m.do.co/c/741cf5923606)
+1. First of all I'd recommened setting up a Digital Ocean account, or any other cloud provider. You can set an account for Digital Ocean [here](https://m.do.co/c/741cf5923606) (It's a referral link)
 
 (Make sure you install docker if you're going outside of DO)
 
@@ -12,18 +12,18 @@ Want to know how to run a bot for 24 hours a day? Sure, I can show you.
 
 3. Connect into the droplet, you can do this via going to the Access Console or alternatively SSH into the droplet.
 
-4. Once you're in type in `docker build https://github.com/jackbayliss/MissionChiefBot-linux.git`, let it run it'll set up the image for the bot. 
+4. Once you're in type in `docker pull jjbayliss/missionchief`, let it run it'll set up the image for the bot. 
  
-5. Once the image is done simply copy the ID which is after `Successfully built [ID]` OR alternatively run `docker images` only one should appear, and copy the ID.
+5. Once the image is done simply run `docker run -it -d jjbayliss/missionchief`. This will create a container for you.
 
-6. Run the command `docker run -it [your image id]` for example `docker run -it 9592340fbaf1` 
+6. Run `docker ps -a` and copy the name of your container there should only be one, then run `docker exec -it [container name] bash` this will take you into the container in a bash.
 
 7. You should be brought straight into a container, all you'll need to do is `cd missionchief/config` and then do `vim config.ini` 
 You'll want to press the `I` key to edit the document, and add your username, password and region. Once done press `ESC` and type `:wq` this will save the document.
 
 8. Run `cd ../ && bash run-d.sh` if you require the despatcher or `cd ../ && bash run-d.sh`
 
-9. To exit the docker container press `CTRL + D`, if you type `docker ps -a` you'll see your container is now off. To get it to start just run `docker ps -a` and copy the name of your container, then run `docker container start [container name]` this will keep your container running- and to get access into it you can do `docker exec -it [container name] bash` and simply run `cd missionchief` and do step 8 :smiley:
+9. To exit the docker container press `CTRL + D`, and if you need to enter the bot again just follow from step 6.
 
 Did you find this useful? Why not buy me a beer!? [donate](https://www.paypal.me/jackbaylissdev)
 
