@@ -2,6 +2,7 @@
 
 This repo is specifically for use with Servers Linux / Docker with generally small amounts of RAM / CPU power,
 
+## How to run the bot 24/7
 Want to know how to run a bot for 24 hours a day? Sure, I can show you.
 
 1. First of all I'd recommened setting up a Digital Ocean account, or any other cloud provider. You can set an account for Digital Ocean [here](https://m.do.co/c/741cf5923606) (It's a referral link)
