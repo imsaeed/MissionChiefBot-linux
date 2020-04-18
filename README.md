@@ -22,7 +22,7 @@ Want to know how to run a bot for 24 hours a day? Sure, I can show you.
 7. You should be brought straight into a container, all you'll need to do is `cd missionchief/config` and then do `vim config.ini` 
 You'll want to press the `I` key to edit the document, and add your username, password and region. Once done press `ESC` and type `:wq` this will save the document.
 
-8. Run `cd ../ && bash run-d.sh` if you require the despatcher or `cd ../ && bash run-d.sh`
+8. Run `cd ../ && bash run.sh` to run the base bot. If you require the despatcher please create another container, but instead run bash run-d.sh. (Just repeat from step 5) - Seems to be an issue if you try and run two chromium instances on one container.
 
 9. To exit the docker container press `CTRL + D`, and if you need to enter the bot again just follow from step 6.
 
