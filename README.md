@@ -1,6 +1,6 @@
 # Python Mission Chief Bot Linux
 
-This repo is specifically for use with Servers Linux / Docker with generally small amounts of RAM / CPU power,
+This repo is specifically for use with Linux servers, so that you can run the bot for 24 hours a day.
 
 ## How to run the bot 24/7
 Want to know how to run a bot for 24 hours a day? Sure, I can show you.
