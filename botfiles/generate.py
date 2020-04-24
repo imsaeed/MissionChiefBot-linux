@@ -28,15 +28,17 @@ def getMissions():
 
 # Grabs the requirements
 def getRequirements():
-  requirements = browser.find_elements_by_tag_name('table')[1].find_elements_by_tag_name('td')
+  requirements = browser.find_elements_by_tag_name('td')
   requiredlist = []
   for index, r in enumerate(requirements):
-    if not r.text.isdigit() and len(r.text)>0:
+    if r.text:
+      if "Required" in r.text or "Patients" in r.text or "Patientenanzahl" in r.text or "Patienter" in r.text or "Pacientes" in r.text or "Pazienti" in r.text or "Patiënten" in r.text or "Pasienter" in r.text or "Pacjenci" in r.text or "Пациенты" in r.text or "Pacienți" in r.text or "Wymagany" in r.text or "Требуемые" in r.text or "Benodigde" in r.text or "benodigd" in r.text or "Nödvändiga" in r.text or "richieste" in r.text or "richiesta" in r.text or "richiesti" in r.text or "Benötigte" in r.text or "Wymagane" in r.text:
+       if "Station" not in r.text and "posterunki" not in r.text and "Caserme" not in r.text and "Stazioni" not in r.text and "Possibilità" not in r.text and "Possibile" not in r.text and "brandstationer" not in r.text and "räddningsstationer" not in r.text:
         requirement = r.text.replace('Required','').replace('Wymagane','').replace('Wymagany','').replace('Требуемые','').replace("Benodigde",'').replace("benodigd",'').replace("Nödvändiga","").replace("richieste","").replace("richiesti","").replace("richiesta","").replace("Benötigte","").strip().lower()
         qty = requirements[index+1].text
-        print(f"Requirement found : {str(qty)} x {str(requirement)}")
+        print(f"Requirement found :   {str(qty)} x {str(requirement)}")
         requiredlist.append({'requirement':requirement,'qty': qty })
-  if len(requiredlist)==0:
+  if(len(requiredlist)==0):
    requiredlist.append({'requirement':'ambulance','qty': 1 })
   return requiredlist
 
@@ -56,6 +58,11 @@ chromedriver_autoinstaller.install()
 chrome_options = Options()  
 if config['DEFAULT'].getboolean('headless_mode'):
   chrome_options.add_argument("--headless")  
+  chrome_options.add_argument("log-level=3")
+  chrome_options.add_argument("--remote-debugging-port=9997")    
+  chrome_options.add_argument('--headless')
+  chrome_options.add_argument('--no-sandbox')
+  chrome_options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(options=chrome_options)
 
 
