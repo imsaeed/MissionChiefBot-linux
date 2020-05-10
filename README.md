@@ -1,4 +1,4 @@
-# Python Mission Chief Bot Linux
+# Python Mission Chief Bot Linux V1
 
 This repo is specifically for use with Linux servers, so that you can run the bot for 24 hours a day.
 
