@@ -412,7 +412,8 @@ def login(username,password,browser):
      alliance = browser.find_element_by_id('alliance_li')
      if alliance.get_attribute('class')=="dropdown":
       logger.debug("Element found, user is logged in")
-      print("Logged in")
+      currentCredits = browser.find_element_by_xpath("//*[@href='credits']").value()
+      print("Logged in. Current credits: " + currentCredits)
       return True
      else:
       logger.debug("Element not found, user is not logged in")
